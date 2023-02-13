@@ -2,11 +2,15 @@ export default function MainButton(props) {
     const handleClick = () => {
         props.onClick(!props.selected)
     }
-    
-    // TODO: refactor into CSS classes
-    const buttonStyle = props.selected ? {backgroundColor: "blue"} : {backgroundColor: "white"};
+
+    const gradient = {background: `linear-gradient(to right, ${[...props.gradient]})`}
 
     return (
-        <button onClick={handleClick} style={buttonStyle}>{props.text}</button>
+        <button 
+            onClick={handleClick}
+            style={props.selected ? gradient : null} 
+            className={"button" + (props.selected ? "-selected" : "")}>
+                {props.text}
+        </button>
     )
 }

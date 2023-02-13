@@ -2,6 +2,7 @@ import { useState } from "react";
 import MainButton from "./MainButton";
 import { desiredOutcomes } from "data/desired_outcomes";
 import { nanoid } from "nanoid";
+import 'styles/Main.css';
 
 
 export default function Main() {
@@ -13,7 +14,8 @@ export default function Main() {
     const outcomes = desiredOutcomes.map((outcome, index) => {
         return <MainButton
                     key={nanoid()}
-                    text={outcome}
+                    text={outcome.text}
+                    gradient={outcome.gradient}
                     selected={isSelected[index]}
                     onClick={() => handleClick(index)}
                 />
@@ -29,14 +31,17 @@ export default function Main() {
     }
 
     return (
-        <div>
+        <div className="main-container">
             <h1>Find Your Calm</h1>
             <p>Our goal is to help you improve your health and happiness.</p>
             <p><strong>What can we help you with today?</strong></p>
 
+        <div className="button-container">
             {outcomes}
 
             {canContinue && <button>Continue</button>}
+        </div>
+            
         </div>
     )
 }

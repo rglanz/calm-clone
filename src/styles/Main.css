@@ -1,0 +1,18 @@
+.main-container {
+    background-image: url('assets/background.jpeg');
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.button,
+.button-selected {
+    border: none;
+    border-radius: 100px;
+
+    margin: 2px;
+    height: 60px;
+    width: 560px;
+}
