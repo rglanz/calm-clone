@@ -9,10 +9,32 @@
 
 .button,
 .button-selected {
-    border: none;
+    border-color: var(--font-color-white);
     border-radius: 100px;
+    border-width: 2px;
 
     margin: 2px;
     height: 60px;
     width: 560px;
+
+}
+
+.button :hover,
+.button-selected :hover {
+    border-radius: 100px;
+    ;
+    filter: brightness(60%);
+    background-color: red;
+    margin: -8px;
+}
+
+.button-label {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.button-logo {
+    transform: scale(0.4);
 }

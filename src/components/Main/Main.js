@@ -14,7 +14,9 @@ export default function Main() {
     const outcomes = desiredOutcomes.map((outcome, index) => {
         return <MainButton
                     key={nanoid()}
+                    id={index}
                     text={outcome.text}
+                    icon={outcome.icon}
                     gradient={outcome.gradient}
                     selected={isSelected[index]}
                     onClick={() => handleClick(index)}
